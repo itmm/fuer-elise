@@ -1,10 +1,12 @@
 \version "2.24.4"
 
+today = #(strftime "%d.%m.%Y" (localtime (current-time)))
+
 \header {
 	title = "Für Elise"
 	composer = "Ludwig van Beethoven"
 	tagline = ##f
-	arranger = "Arrangement: timm@knp.de"
+	arranger = \markup { "Arrangement: timm@knp.de" \today }
 }
 
 \paper {
@@ -311,7 +313,6 @@ guitar_tab = <<
 			indent = 0\in
 			\omit Voice.StringNumber
 		}
-%		\header { piece = "Für Elise" }
 	}
 	\score {
 		\unfoldRepeats
