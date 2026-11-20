@@ -231,26 +231,11 @@ melodie = {
 	\repeat volta 8 {
 		\melodie_thema
 		\alternative {
-			\volta 1 {
-				\once \override Score.VoltaBracket.musical-length = \musicLength 2.
-				\melodie_wiederholung_thema
-			}
-			\volta 2,3,5,7 {
-				\once \override Score.VoltaBracket.musical-length = \musicLength 2.
-				\melodie_nebenthema
-			}
-			\volta 4 {
-				\once \override Score.VoltaBracket.musical-length = \musicLength 2.
-				\melodie_kadenz_eins
-			}
-			\volta 6 {
-				\once \override Score.VoltaBracket.musical-length = \musicLength 2.
-				\melodie_kadenz_zwei
-			}
-			\volta 8 {
-				\once \override Score.VoltaBracket.musical-length = \musicLength 2.
-				\melodie_ende
-			}
+			\volta 1 { \melodie_wiederholung_thema }
+			\volta 2,3,5,7 { \melodie_nebenthema }
+			\volta 4 { \melodie_kadenz_eins }
+			\volta 6 { \melodie_kadenz_zwei }
+			\volta 8 { \melodie_ende }
 		}
 	}
 }
@@ -263,26 +248,11 @@ bass = {
 	\repeat volta 8 {
 		\bass_thema
 		\alternative {
-			\volta 1 {
-				\once \override Score.VoltaBracket.musical-length = \musicLength 2.
-				\bass_wiederholung_thema
-			}
-			\volta 2,3,5,7 {
-				\once \override Score.VoltaBracket.musical-length = \musicLength 2. 
-				\bass_nebenthema
-			}
-			\volta 4 {
-				\once \override Score.VoltaBracket.musical-length = \musicLength 2.
-				\bass_kadenz_eins
-			}
-			\volta 6 {
-				\once \override Score.VoltaBracket.musical-length = \musicLength 2.
-				\bass_kadenz_zwei
-			}
-			\volta 8 {
-				\once \override Score.VoltaBracket.musical-length = \musicLength 2.
-				\bass_ende
-			}
+			\volta 1 { \bass_wiederholung_thema }
+			\volta 2,3,5,7 { \bass_nebenthema }
+			\volta 4 { \bass_kadenz_eins }
+			\volta 6 { \bass_kadenz_zwei }
+			\volta 8 { \bass_ende }
 		}
 	}
 }
@@ -306,6 +276,7 @@ guitar_tab = <<
 \book {
 	\score {
 		<< 
+			\override Score.VoltaBracket.musical-length = \musicLength 2.
 			\new Staff { \guitar }
 			\new TabStaff { \guitar_tab }
 		>>
@@ -316,7 +287,7 @@ guitar_tab = <<
 	}
 	\score {
 		\unfoldRepeats
-		<< \new Staff \with { midiInstrument = "acoustic guitar (nylon)" } { \guitar } >>
+		\new Staff \with { midiInstrument = "acoustic guitar (nylon)" } { \guitar }
 		\midi { }
 	}
 }

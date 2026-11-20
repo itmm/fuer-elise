@@ -231,26 +231,11 @@ melodie = {
 	\repeat volta 8 {
 		\melodie_thema
 		\alternative {
-			\volta 1 {
-				\once \override Score.VoltaBracket.musical-length = \musicLength 2.
-				\melodie_wiederholung_thema
-			}
-			\volta 2,3,5,7 {
-				\once \override Score.VoltaBracket.musical-length = \musicLength 2.
-				\melodie_nebenthema
-			}
-			\volta 4 {
-				\once \override Score.VoltaBracket.musical-length = \musicLength 2.
-				\melodie_kadenz_eins
-			}
-			\volta 6 {
-				\once \override Score.VoltaBracket.musical-length = \musicLength 2.
-				\melodie_kadenz_zwei
-			}
-			\volta 8 {
-				\once \override Score.VoltaBracket.musical-length = \musicLength 2.
-				\melodie_ende
-			}
+			\volta 1 { \melodie_wiederholung_thema }
+			\volta 2,3,5,7 { \melodie_nebenthema }
+			\volta 4 { \melodie_kadenz_eins }
+			\volta 6 { \melodie_kadenz_zwei }
+			\volta 8 { \melodie_ende }
 		}
 	}
 }
@@ -263,26 +248,11 @@ bass = {
 	\repeat volta 8 {
 		\bass_thema
 		\alternative {
-			\volta 1 {
-				\once \override Score.VoltaBracket.musical-length = \musicLength 2.
-				\bass_wiederholung_thema
-			}
-			\volta 2,3,5,7 {
-				\once \override Score.VoltaBracket.musical-length = \musicLength 2. 
-				\bass_nebenthema
-			}
-			\volta 4 {
-				\once \override Score.VoltaBracket.musical-length = \musicLength 2.
-				\bass_kadenz_eins
-			}
-			\volta 6 {
-				\once \override Score.VoltaBracket.musical-length = \musicLength 2.
-				\bass_kadenz_zwei
-			}
-			\volta 8 {
-				\once \override Score.VoltaBracket.musical-length = \musicLength 2.
-				\bass_ende
-			}
+			\volta 1 { \bass_wiederholung_thema }
+			\volta 2,3,5,7 { \bass_nebenthema }
+			\volta 4 { \bass_kadenz_eins }
+			\volta 6 { \bass_kadenz_zwei }
+			\volta 8 { \bass_ende }
 		}
 	}
 }
@@ -318,6 +288,7 @@ bass_tab = <<
 \book {
 	\score {
 		<<
+			\override Score.VoltaBracket.musical-length = \musicLength 2.
 			\new StaffGroup \with { instrumentName = \markup { \column {
 				"Klassik- " \line { "gitarre" } 
 			}}} << 
@@ -345,6 +316,7 @@ bass_tab = <<
 	\bookOutputSuffix "melodie"
 	\score {
 		<<
+			\override Score.VoltaBracket.musical-length = \musicLength 2.
 			\new StaffGroup <<
 				\new Staff { \melodie_git }
 				\new TabStaff { \melodie_tab }
@@ -356,9 +328,7 @@ bass_tab = <<
 		}
 	}
 	\score {
-		<<
-			\new Staff \with { midiInstrument = "acoustic guitar (nylon)" } { \melodie_git }
-		>>
+		\new Staff \with { midiInstrument = "acoustic guitar (nylon)" } { \melodie_git }
 		\midi { }
 	}
 }
@@ -366,6 +336,7 @@ bass_tab = <<
 	\bookOutputSuffix "bass"
 	\score {
 		<<
+			\override Score.VoltaBracket.musical-length = \musicLength 2.
 			\new StaffGroup << 
 				\new Staff { \bass_git }
 	 			\new TabStaff \with { stringTunings = #bass-tuning } { \bass_tab }
@@ -377,9 +348,7 @@ bass_tab = <<
 		}
 	}
 	\score {
-		<<
-			\new Staff \with { midiInstrument = "contrabass" } { \bass_git }
-		>>
+		\new Staff \with { midiInstrument = "contrabass" } { \bass_git }
 		\midi { }
 	}
 }
