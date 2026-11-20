@@ -3,7 +3,7 @@
 today = #(strftime "%d.%m.%Y" (localtime (current-time)))
 
 \header {
-	title = "Für Elise"
+	title = "Für Elise für Gitarre"
 	composer = "Ludwig van Beethoven"
 	tagline = ##f
 	arranger = \markup { "Arrangement: timm@knp.de" \today }
